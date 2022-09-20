@@ -108,7 +108,10 @@ body {
     margin-left: 50px;
 }
 
+
 .nav-item .link {
+    position: relative;
+
     display: block;
     padding: 32px 0;
 
@@ -116,6 +119,22 @@ body {
     color: var(--secondary-text-color);
     line-height: 1.2;
     
+}
+
+.nav-item .current::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+
+    background-color: var(--accent-link-color);
+
 }
 
 .nav-item .link:hover,
@@ -212,6 +231,32 @@ body {
 
 }
 
+.backdrop {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    
+    min-width: 100%;
+    min-height: 100%;
+    
+    background: rgba(0, 0, 0, 0.2);
+    outline: 5px solid red;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 528px;
+    min-height: 581px;
+
+    background-color: var(--primary-white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
 /* Benefits */
 .benefits {
     line-height: 1.7;
@@ -273,7 +318,30 @@ body {
     width: 370px;
 }
 
+.activities-thumb {
+    position: relative;
+}
+
+.activities-desc {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+
+    color: var(--primary-white-color);
+    background-color: rgba(47, 48, 58, 0.8);
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
 /* Staff */
+
 .staff {
     background-color: var(--primary-bg-color);
 }
